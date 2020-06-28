@@ -1,4 +1,4 @@
-package com.life.algorithm.doublePointer1;
+package com.life.algorithm.doublepointer1;
 
 /**
  * 可以删除一个字符，判断是否能构成回文字符串
@@ -9,11 +9,15 @@ package com.life.algorithm.doublePointer1;
  **/
 public class VerifyPalindrome {
 
-    public boolean validPalindrome(String s) {
+    public static void main(String[] args) {
+        System.out.println(validPalindrome("abcdudyuhuyduddcba"));
+    }
+
+    public static boolean validPalindrome(String s) {
         return isPalindrome(s, 0);
     }
 
-    public boolean isPalindrome(String s, int count) {
+    public static boolean isPalindrome(String s, int count) {
         for (int i = 0, j = s.length() - 1; i < j;) {
             if (s.charAt(i) == s.charAt(j)) {
                 i++;j--;

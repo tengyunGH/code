@@ -1,4 +1,4 @@
-package com.life.algorithm.doublePointer1;
+package com.life.algorithm.doublepointer1;
 
 /**
  * 给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数
@@ -11,15 +11,18 @@ package com.life.algorithm.doublePointer1;
  **/
 public class TwoSum {
 
+    public static void main(String[] args) {
+        System.out.println(twoSum(new int[]{1,2,3,4,5,6,7,8,11,23,45,56,67,78,89,90,100,110,120,140}, 89));
+    }
+
     /**
-     *
      * @author tengyun
      * @date 11:02 2020/6/22
      * @param numbers 有序数组
      * @param target 目标和
      * @return int[] 下标
      **/
-    public int[] twoSum(int[] numbers, int target) {
+    public static int[] twoSum(int[] numbers, int target) {
         int length = numbers.length;
         int[] results = new int[2];
         for (int i = 0, j = length - 1; i < j;) {

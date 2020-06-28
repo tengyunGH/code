@@ -1,4 +1,4 @@
-package com.life.algorithm.doublePointer1;
+package com.life.algorithm.doublepointer1;
 
 /**
  * 编写一个函数，以字符串作为输入，反转该字符串中的元音字母。
@@ -9,7 +9,11 @@ package com.life.algorithm.doublePointer1;
  **/
 public class RevertVowel {
 
-    public String reverseVowels(String s) {
+    public static void main(String[] args) {
+        System.out.println(reverseVowels("tengyuntengleatcodUyuntengAyun"));
+    }
+
+    public static String reverseVowels(String s) {
         char[] charArray = s.toCharArray();
         char temp;
         for (int i = 0, j = charArray.length - 1; i < j;) {
@@ -29,7 +33,7 @@ public class RevertVowel {
         return String.valueOf(charArray);
     }
 
-    public boolean isVowel(char a) {
+    public static boolean isVowel(char a) {
         switch (a) {
             case 'a':
             case 'o':
