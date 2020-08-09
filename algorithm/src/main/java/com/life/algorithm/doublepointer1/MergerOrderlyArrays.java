@@ -1,10 +1,10 @@
 package com.life.algorithm.doublepointer1;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 /**
+ * 合并两个有序的数据
  * @author tengyun
  * @version 1.0
  * @date 2020/6/22 19:34
