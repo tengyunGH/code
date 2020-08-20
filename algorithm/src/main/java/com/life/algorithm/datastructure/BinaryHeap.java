@@ -1,5 +1,8 @@
 package com.life.algorithm.datastructure;
 
+import java.util.Arrays;
+import java.util.PriorityQueue;
+
 /**
  * 二叉堆
  * 对二叉堆的操作：构建操作 插入操作 删除操作
@@ -11,9 +14,89 @@ package com.life.algorithm.datastructure;
 public class BinaryHeap {
 
     public static void main(String[] args) {
-        Integer[] a = {15, 2, 31, 18, 1, 90, 67, 34, 9, 23, 90, 100};
-        minimumHeap(a);
-        maximumHeap(a);
+        Integer[] a = {15, 2, 3, 18, 11, 90, 67, 34, 9, 23, 90, 10};
+        // minimumHeap(a);
+        // maximumHeap(a);
+        // minimumHeapSort(a);
+        // maxmumHeapSort(a);
+        System.out.println("结束1");
+    }
+
+    // 从大到小排序
+    private static void maxmumHeapSort(Integer[] a) {
+        int length = a.length;
+        int z = 0;
+        while (z < length - 1) {
+            // 本棵树中，从最后一个非叶子结点开始循环
+            int i = (length - 2 - z) / 2 + z;
+            while (i >= z) {
+                // 将这棵子树的顶点进行下沉，父节点小于最大的那个就下沉
+                int temp = a[i];
+                int j = i;
+                while (true) {
+                    // 当j指向的是叶子结点，结束；当父节点就是最大的时候，结束；
+                    if (j > ((length - 2 - z) / 2 + z)) {
+                        a[j] = temp;
+                        break;
+                    }
+                    int maxmumIndex = 2 * j - z + 1, maxmum = a[maxmumIndex];
+                    if (maxmumIndex + 1 < length && a[maxmumIndex + 1] > maxmum) {
+                        maxmum = a[++maxmumIndex];
+                    }
+                    // 更大的上浮，小的下沉
+                    if (temp < maxmum) {
+                        a[j] = maxmum;
+                        j = maxmumIndex;
+                    } else {
+                        a[j] = temp;
+                        break;
+                    }
+                }
+                i--;
+            }
+            z++;
+        }
+        System.out.println("结束1");
+    }
+
+    /**
+     * 一定记住最后一个非叶子节点的下标是，数组个数减去2除以2（数组下标从0开始）
+     **/
+    private static void minimumHeapSort(Integer[] a) {
+        int length = a.length;
+        int z = 0;
+        // 每次找到最小的那个数之后放在数组头部
+        while (z < length - 1) {
+            // 从本棵树的最后一个非叶子节点开始循环，逐个下沉，注意最后一个非叶子节点的下标表达式
+            int i = (length - 2 - z) / 2 + z ;
+            while (i >= z) {
+                int temp = a[i];
+                int j = i;
+                // 当j是叶子节点时结束循环，当j不比两个子节点大的时候结束循环
+                while (true) {
+                    if (j > (length - 2 - z) / 2 + z) {
+                        a[j] = temp;
+                        break;
+                    }
+                    int minimumIndex = 2 * j - z + 1, minimum = a[minimumIndex];
+                    if (minimumIndex + 1 < length && a[minimumIndex + 1] < minimum) {
+                        minimumIndex++;
+                        minimum = a[minimumIndex];
+                    }
+                    // 父节点比子节点要大，下沉
+                    if (temp > minimum) {
+                        a[j] = minimum;
+                        j = minimumIndex;
+                    } else {
+                        a[j] = temp;
+                        break;
+                    }
+                }
+                i--;
+            }
+            z++;
+        }
+        System.out.println("结束1");
     }
 
     /**
@@ -82,6 +165,15 @@ public class BinaryHeap {
         System.out.println("结束");
     }
 
+    public int findKthLargest(int[] nums, int k) {
+        Arrays.sort(nums);
+        return nums[nums.length - k];
+    }
 
+    public void test (Integer[] a, int k) {
+        PriorityQueue<Integer> minimum = new PriorityQueue<>();
+
+
+    }
 
 }
