@@ -11,20 +11,42 @@ import java.util.Map;
  **/
 public class FindDuplicateSubtrees {
 
-    private Map<String, Integer> childTreeMap = new HashMap<>();
-    private List<Node> repeatNode = new ArrayList<>();
+    public static void main(String[] args) {
+        Node node8 = new Node(222);
+        Node node9 = new Node(222);
+        Node node10 = new Node(222);
+        Node node11 = new Node(222);
+        Node node12 = new Node(222);
+        Node node13 = new Node(23);
+        Node node14 = new Node(23);
+        Node node15 = new Node(23);
+        Node node7 = new Node(23, node14, node15, null);
+        Node node6 = new Node(23, node12, node13, null);
+        Node node5 = new Node(23, node10, node11, null);
+        Node node4 = new Node(23, node8, node9, null);
+        Node node3 = new Node(23, node6, node7, null);
+        Node node2 = new Node(23, node4, node5, null);
+        Node node1 = new Node(23, node2, node3, null);
+        findDuplicateSubtreesTwo(node1);
+        System.out.println(count);
+    }
+    
+    private static Map<String, Integer> childTreeMap = new HashMap<>();
+    private static List<Node> repeatNode = new ArrayList<>();
 
-    public List<Node> findDuplicateSubtrees(Node root) {
+    public static List<Node> findDuplicateSubtrees(Node root) {
         treeSerialize(root);
+        System.out.println(t);
         return repeatNode;
     }
 
-    public String treeSerialize(Node root) {
+    public static String treeSerialize(Node root) {
+        t++;
         if (root == null) {
             return "#";
         }
         // 只能是前序或后序，中序序列化的话，可能会重复
-        String tree = treeSerialize(root.left) + "," + treeSerialize(root.right) + "," + root.val;
+        String tree = new StringBuilder(treeSerialize(root.left)).append(",").append(treeSerialize(root.right)).append(",").append(root.val).toString();
         Integer count = childTreeMap.get(tree);
         if (count == null) {
             childTreeMap.put(tree, 1);
@@ -41,20 +63,22 @@ public class FindDuplicateSubtrees {
      * @author tengyun
      * @date 20:52 2020/12/10
      **/
-    private Map<String, Integer> treeId = new HashMap<>();
-    private Map<Integer, Integer> idNumber = new HashMap<>();
-    int t = 1;
+    private static Map<String, Integer> treeId = new HashMap<>();
+    private static Map<Integer, Integer> idNumber = new HashMap<>();
+    static int t = 1;
+    static int count = 1;
 
-    public List<Node> findDuplicateSubtreesTwo(Node root) {
+    public static List<Node> findDuplicateSubtreesTwo(Node root) {
         treeId(root);
         return repeatNode;
     }
 
-    public int treeId(Node root) {
+    public static int treeId(Node root) {
+        count++;
         if (root == null) {
             return 0;
         }
-        String serial = root.val + "," + treeSerialize(root.left) + "," + treeSerialize(root.right);
+        String serial = root.val + "," + treeId(root.left) + "," + treeId(root.right);
         int id = treeId.computeIfAbsent(serial, x -> t++);
         idNumber.put(id, idNumber.getOrDefault(id, 0) + 1);
         if (idNumber.get(id) == 2) {
