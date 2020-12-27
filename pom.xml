@@ -9,6 +9,7 @@
         <module>sourcecode</module>
         <module>juc</module>
         <module>net</module>
+        <module>quartzdemo</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
