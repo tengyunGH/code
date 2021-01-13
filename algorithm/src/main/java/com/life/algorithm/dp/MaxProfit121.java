@@ -1,6 +1,7 @@
 package com.life.algorithm.dp;
 
 /**
+ * 只做一次交易
  * 第i天的最大收益是，第i天的值减去从0到第i-1之间的最小值
  * 记录下最大的收益就好了
  * @author tengyun
