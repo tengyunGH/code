@@ -8,26 +8,37 @@ public class MaxProfit188 {
 
     public static void main(String[] args) {
         MaxProfit188 maxProfit188 = new MaxProfit188();
-        maxProfit188.maxProfit(2, new int[]{3, 2, 6, 5, 0, 3});
+        maxProfit188.maxProfit(1, new int[]{1,2});
     }
 
+    /**
+     *
+     **/
     public int maxProfit(int k, int[] prices) {
-        int[] buy = new int[k];
-        int[] sell = new int[k];
         int n = prices.length;
+
+        if (k == 0 || n <= 1) {
+            return 0;
+        }
+
+        int[][] buy = new int[n][k+1];
+        int[][] sell = new int[n][k+1];
+
         // 初始化买入
-        for (int j = 0; j <= k - 1; j++) {
-            buy[j] = -prices[0];
+        for (int j = 1; j <= k; j++) {
+            buy[0][j] = -prices[0];
         }
         // 状态转移
         for (int i = 1; i < n; i++) {
-            for (int j = 1; j < k; j++) {
-                buy[j] = Math.max(buy[j - 1], sell[j - 1] - prices[i]);
-                sell[j] = Math.max(sell[j - 1], buy[j - 1] + prices[i]);
+            for (int j = 1; j <= k && j <= (n/2); j++) {
+                // 第i天买入第j支
+                buy[i][j] = Math.max(buy[i-1][j], sell[i-1][j-1] - prices[i]);
+                // 第i天卖出第j支
+                sell[i][j] = Math.max(sell[i-1][j], buy[i-1][j] + prices[i]);
             }
         }
         int max = 0;
-        for (int stat : sell) {
+        for (int stat : sell[n-1]) {
             if (stat > max) {
                 max = stat;
             }
