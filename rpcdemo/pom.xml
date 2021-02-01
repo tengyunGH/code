@@ -8,27 +8,17 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>application</artifactId>
 
+    <artifactId>rpcdemo</artifactId>
     <dependencies>
         <dependency>
-            <groupId>co.paralleluniverse</groupId>
-            <artifactId>quasar-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.openjdk.jol</groupId>
-            <artifactId>jol-core</artifactId>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>4.1.49.Final</version>
-        </dependency>
-
     </dependencies>
 
 
