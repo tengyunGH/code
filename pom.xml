@@ -13,6 +13,8 @@
         <module>redis-test</module>
         <module>rpcdemo</module>
         <module>sso</module>
+        <module>dynamicAgent</module>
+        <module>designPattern</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

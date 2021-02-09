@@ -51,6 +51,7 @@ public class TokenTest {
 
     @GetMapping("/data/tok/token")
     public Boolean getData(HttpServletRequest request) {
+        System.out.println("controller");
         return true;
     }
 

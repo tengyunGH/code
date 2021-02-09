@@ -28,15 +28,15 @@ public class CorsFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
         throws IOException, ServletException {
+        System.out.println("doFilter1 before chain");
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         HttpServletRequest httpRequest = (HttpServletRequest) request;
-        String origin = httpRequest.getHeader("Origin");
-        System.out.println(origin);
-        httpResponse.setHeader("Access-Control-Allow-Origin", "*");
+        httpResponse.setHeader("Access-Control-Allow-Origin", httpRequest.getHeader("Origin"));
         httpResponse.setHeader("Access-Control-Allow-Methods", httpRequest.getMethod());
         httpResponse.setHeader("Access-Control-Allow-Headers", httpRequest.getHeader("Access-Control-Request-Headers"));
         httpResponse.setHeader("Access-Control-Allow-Credentials", "true");
         chain.doFilter(request, response);
+        System.out.println("doFilter1 after chain");
     }
 
     @Override
