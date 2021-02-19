@@ -1,7 +1,5 @@
 package com.life.algorithm.binarysearch;
 
-import org.springframework.util.StringUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 

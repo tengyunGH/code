@@ -1,10 +1,42 @@
 package com.life.algorithm.hot100;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 /**
  * @author tengyun
  * @date 2021/1/29 20:25
  **/
 public class Trap42 {
+
+    /**
+     * 一个点的雨水量等于 左右两边最大的较小值减去当前值
+     * @author tengyun
+     * @date 14:01 2021/2/18
+     * @param height 高度数组
+     * @return int
+     **/
+    public int trap2(int[] height) {
+        int res = 0, n = height.length;
+        if (n <= 2) {
+            return res;
+        }
+        // 计算每个位置的最右边的最大值
+        int[] rmax = new int[n];
+        for (int i = n-1; i >= 0; i--) {
+            rmax[i] = Math.max(rmax[i+1], height[i]);
+        }
+        int lmax = height[0];
+        for (int i = 1; i < n; i++) {
+            lmax = Math.max(lmax, height[i]);
+            res += Math.min(lmax, rmax[i]) - height[i];
+        }
+        return res;
+    }
+
+
+
+
 
     /**
      * 对第i个元素能接的雨水，等于 min(max(height[l]), max(height[r])) - height[i])
@@ -59,5 +91,35 @@ public class Trap42 {
         }
         return res;
     }
+
+    public int trap3(int[] height) {
+        int res = 0, n = height.length;
+        if (n <= 2) {
+            return res;
+        }
+        // 使用栈
+        Deque<Integer> stack = new LinkedList<>();
+        for (int i = 0; i < n; i++) {
+            // 栈为空，进栈
+            if (stack.isEmpty()) {
+                stack.addLast(height[i]);
+            } else {
+                // 栈不为空，比较栈顶元素和当前元素的大小
+                Integer peek = stack.peekLast();
+                if (height[i] <= peek) {
+                    stack.addLast(height[i]);
+                } else {
+
+
+                }
+            }
+        }
+
+
+
+        return res;
+    }
+
+
 
 }

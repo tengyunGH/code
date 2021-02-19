@@ -21,7 +21,7 @@ public class BreakDown {
         String key = "tengyun";
         String v = redisSupport.get(key);
         String key_mutex = "ty";
-        if (v == null) {
+/*        if (v == null) {
             if (redisSupport.set(key_mutex, 3 * 60 * 1000) == true) {
                 value = db.get(key);
                 redisSupport.set(key, value);
@@ -47,7 +47,7 @@ public class BreakDown {
                     retry();
                 }
             }
-        }
+        }*/
 
 
     }

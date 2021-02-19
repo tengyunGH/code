@@ -1,0 +1,9 @@
+server:
+  port: 7090
+
+security:
+  token:
+    check:
+      openCheck: false
+      url: http://www.baidu.com
+      login: http://www.baidu.com
