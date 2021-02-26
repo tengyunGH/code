@@ -3,23 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>springdemo</artifactId>
+        <artifactId>mysql</artifactId>
         <groupId>com.life</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springdemo-service</artifactId>
+    <artifactId>mysql-api</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>com.life</groupId>
-            <artifactId>code-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.life</groupId>
-            <artifactId>springdemo-dao</artifactId>
+            <artifactId>mysql-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

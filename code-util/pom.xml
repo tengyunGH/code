@@ -9,13 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springdemo</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>springdemo-controller</module>
-        <module>springdemo-dao</module>
-        <module>springdemo-service</module>
-        <module>springdemo-security</module>
-    </modules>
+    <artifactId>code-util</artifactId>
+
 
 </project>
