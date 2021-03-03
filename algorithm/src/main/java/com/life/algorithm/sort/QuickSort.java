@@ -127,4 +127,43 @@ public class QuickSort {
     }
 
 
+
+
+    public void quickSort2(Integer[] a, int left, int right) {
+        if (right <= left) {
+            return;
+        }
+        int i = left, j = right;
+        while (i < j) {
+            while (i < j && a[j] >= a[left]) {
+                j--;
+            }
+            while (i < j && a[i] <= a[left]) {
+                i++;
+            }
+            if (i < j) {
+                int temp = a[j];
+                a[j] = a[i];
+                a[i] = temp;
+            }
+        }
+        int temp = a[i];
+        a[i] = a[left];
+        a[left] = temp;
+        quickSort(a, left, i-1);
+        quickSort(a, i+1, right);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

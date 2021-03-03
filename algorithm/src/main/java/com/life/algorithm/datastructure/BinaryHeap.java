@@ -170,10 +170,4 @@ public class BinaryHeap {
         return nums[nums.length - k];
     }
 
-    public void test (Integer[] a, int k) {
-        PriorityQueue<Integer> minimum = new PriorityQueue<>();
-
-
-    }
-
 }

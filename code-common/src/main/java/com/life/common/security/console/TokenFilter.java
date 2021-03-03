@@ -2,13 +2,11 @@ package com.life.common.security.console;
 
 import com.life.common.http.HttpResult;
 import com.life.common.http.OkHttpUtil;
-import com.life.springdemo.utils.JsonUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
-import org.springframework.stereotype.Component;
 import org.springframework.web.context.support.WebApplicationContextUtils;
+import utils.JsonUtil;
 
 import javax.annotation.Resource;
 import javax.servlet.Filter;
