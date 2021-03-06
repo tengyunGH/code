@@ -80,14 +80,19 @@ public class ConsumerDeadLetter {
     }
 
     /**
-     * 业务队列，
-     **/
+     * 业务队列
+     *
+     * 如果没有配置x-dead-letter-routing-key 死信routingKey ，消息进入死信交换机后，会按照消息原本的routingkey去死信交换机里匹配
+     * 如果原有消息的路由key是businessB.test，被发送到业务Exchage中，然后被投递到业务队列businessB中，
+     * 如果该队列没有配置参数x-dead-letter-routing-key，则该消息成为死信后，将保留原有的路由businessB.test，
+     * 如果配置了该参数，并且值设置为test.dead1，那么该消息成为死信后，路由key将会被替换为test.dead1，然后被抛到死信交换机中。
+     */
     @RabbitListener(bindings = @QueueBinding(
         value = @Queue(
             name = "businessB",
             arguments = {
                 @Argument(name = "x-dead-letter-exchange", value = "quartz.demo.exchange.deadLetter"), // 死信交换机
-                @Argument(name = "x-dead-letter-routing-key", value = "test.dead1") // 死信routingKey
+                @Argument(name = "x-dead-letter-routing-key", value = "test.dead1")
             }),
         exchange = @Exchange("quartz.demo.exchange.business"),
         key = "businessB.test"))
