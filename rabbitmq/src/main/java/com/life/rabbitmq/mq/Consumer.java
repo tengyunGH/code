@@ -1,8 +1,7 @@
 package com.life.rabbitmq.mq;
 
-import com.rabbitmq.client.Channel;
+import com.life.rabbitmq.mq.service.ConsumerService;
 import org.springframework.amqp.core.ExchangeTypes;
-import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.Argument;
 import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
@@ -52,7 +51,7 @@ public class Consumer {
 
     @RabbitListener(bindings = @QueueBinding(value = @Queue(), exchange = @Exchange(value = "quartz.demo.exchange.fanout", type = ExchangeTypes.FANOUT)))
     @RabbitHandler
-    public void consumeFanout5(Object msg) {
+    public void consumeFanout3(Object msg) {
         System.out.println("5   " + msg.toString());
     }
 

@@ -1,4 +1,4 @@
-package com.life.rabbitmq.mq;
+package com.life.rabbitmq.mq.confirm;
 
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

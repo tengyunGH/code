@@ -1,5 +1,6 @@
 package com.life.rabbitmq.mq;
 
+import com.life.rabbitmq.mq.confirm.ConfirmCallbackService;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
