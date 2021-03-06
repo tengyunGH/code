@@ -2,19 +2,6 @@ server:
   port: 8091
 
 spring:
-  rabbitmq:
-    host: 10.251.160.26
-    port: 5672
-    username: boecopd
-    password: boecopd@12345
-    listener:
-      simple:
-        retry:
-          enabled: true
-          max-attempts: 3 # 最大重试次数
-          initial-interval: 3000 # 重试间隔
-        acknowledge-mode: manual
-    publisher-confirm-type: correlated
   redis:
     database: 0
     host: 10.251.160.26

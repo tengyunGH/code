@@ -1,4 +1,4 @@
-package com.tengyun.quartzdemo.entity;
+package com.life.rabbitmq.mq.entity;
 
 import java.io.Serializable;
 
@@ -8,16 +8,39 @@ import java.io.Serializable;
  **/
 public class Student implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
+    private Long id;
+
     private String name;
 
     private Integer age;
 
     private Integer gender;
 
-    public Student(String name, Integer age, Integer gender) {
+    public Student(Long id, String name, Integer age, Integer gender) {
+        this.id = id;
         this.name = name;
         this.age = age;
         this.gender = gender;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", age=" + age +
+            ", gender=" + gender +
+            '}';
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

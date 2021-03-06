@@ -20,6 +20,7 @@
         <module>mysql</module>
         <module>code-common</module>
         <module>code-util</module>
+        <module>rabbitmq</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

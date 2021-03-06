@@ -1,0 +1,23 @@
+server:
+  port: 8093
+
+spring:
+  rabbitmq:
+    host: 10.251.160.26
+    port: 5672
+    username: boecopd
+    password: boecopd@12345
+    listener:
+      simple:
+        retry:
+          enabled: true
+          max-attempts: 3 # 最大重试次数，这里表示消息发送失败后，将会再重发一次
+          initial-interval: 3000 # 重试间隔
+        acknowledge-mode: manual # 开启手动确认消费端收到消息后回复ack
+        default-requeue-rejected: false
+    publisher-confirm-type: correlated # 开启生产者的confirm模式
+  redis:
+    database: 0
+    host: 10.251.160.26
+    port: 6379
+    password: boemhp@12345

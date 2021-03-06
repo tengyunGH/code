@@ -1,4 +1,4 @@
-package com.tengyun.quartzdemo.mq;
+package com.life.rabbitmq.mq;
 
 import com.rabbitmq.client.Channel;
 import org.springframework.amqp.core.ExchangeTypes;
@@ -12,7 +12,6 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import java.io.IOException;
 
 /**
  * @author tengyun
@@ -32,14 +31,18 @@ public class Consumer {
 
     /**
      * 广播类型的交换机不需要指定binding key，交换机会转发到他绑定的所有队列中
+     *
      * @author tengyun
      * @date 14:59 2021/3/1
      **/
-    @RabbitListener(bindings = @QueueBinding(value = @Queue("queueA"), exchange = @Exchange(value = "quartz.demo.exchange.fanout", type = ExchangeTypes.FANOUT)))
+    @RabbitListener(bindings = @QueueBinding(
+        value = @Queue(name = "queueA"),
+        exchange = @Exchange(value = "quartz.demo.exchange.fanout", type = ExchangeTypes.FANOUT)))
     @RabbitHandler
     public void consumeFanout1(Object msg) {
         System.out.println("2   " + msg.toString());
     }
+
 
     @RabbitListener(bindings = @QueueBinding(value = @Queue("queueB"), exchange = @Exchange(value = "quartz.demo.exchange.fanout", type = ExchangeTypes.FANOUT)))
     @RabbitHandler
@@ -55,9 +58,10 @@ public class Consumer {
 
     /**
      * durable = "true" 设置队列持久化
+     *
+     * @param msg 消息
      * @author tengyun
      * @date 14:14 2021/3/2
-     * @param msg 消息
      **/
     @RabbitListener(bindings = @QueueBinding(
         value = @Queue(name = "qu", durable = "true"),
@@ -69,24 +73,10 @@ public class Consumer {
         }
     ))
     @RabbitHandler
-    public void consumeHeader(Object msg, Channel channel, Message message) throws IOException {
-        try {
-            consumerService.execute(msg);
-            // 业务代码
-            System.out.println("4   " + msg.toString());
-            // 手动ack
-            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
-        } catch (Exception e) {
-            if (message.getMessageProperties().getRedelivered()) {
-                System.out.println("消息已重复处理失败,拒绝再次接收..." + e);
-                // 拒绝消息
-                channel.basicReject(message.getMessageProperties().getDeliveryTag(), false);
-            } else {
-                System.out.println("消息即将再次返回队列处理..." + e);
-                // 回调nack接口返回队列
-                channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, true);
-            }
-        }
+    public void consumeHeader(Object msg) {
+        consumerService.execute(msg);
+        // 业务代码
+        System.out.println("4   " + msg.toString());
     }
 
 }

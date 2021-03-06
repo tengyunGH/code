@@ -1,4 +1,4 @@
-package com.tengyun.quartzdemo.mq;
+package com.life.rabbitmq.mq;
 
 import org.springframework.stereotype.Service;
 
