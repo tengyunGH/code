@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author tengyun
  * @date 2020/8/28 20:07
  **/
-public class LocalCache<T> {
+public class MyLocalCache<T> {
 
     private ConcurrentHashMap<String, SoftReference<T>> localCache = new ConcurrentHashMap<>();
 
