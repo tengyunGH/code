@@ -3,10 +3,6 @@ server:
 
 spring:
   rabbitmq:
-    host: 10.251.160.26
-    port: 5672
-    username: boecopd
-    password: boecopd@12345
     listener:
       simple:
         retry:
@@ -18,6 +14,3 @@ spring:
     publisher-confirm-type: correlated # 开启生产者的confirm模式
   redis:
     database: 0
-    host: 10.251.160.26
-    port: 6379
-    password: boemhp@12345
