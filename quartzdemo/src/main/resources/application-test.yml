@@ -4,6 +4,3 @@ server:
 spring:
   redis:
     database: 0
-    host: 10.251.160.26
-    port: 6379
-    password: boemhp@12345
