@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-04-08T06:26:30.649Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36" etag="kKsPlpf124ll8DkhPpWe" version="17.4.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-08T06:26:42.193Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36" etag="--ODsQXSB7NUM0h5XopX" version="17.4.0" type="github">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">
     <mxGraphModel dx="2276" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -252,9 +252,6 @@
         </mxCell>
         <mxCell id="q8JuxCzXqDeuzhjoreGz-13" value="源版本一致，覆盖" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
           <mxGeometry x="-5" y="1210" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="q8JuxCzXqDeuzhjoreGz-28" value="手动同步或仅 wifi 下的非 wifi 情况" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="-160" y="270" width="200" height="20" as="geometry" />
         </mxCell>
         <mxCell id="q8JuxCzXqDeuzhjoreGz-37" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
