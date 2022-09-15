@@ -1,1 +1,41 @@
-<mxfile host="app.diagrams.net" modified="2022-09-15T14:08:20.313Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" version="20.2.7" etag="-Ml3EBbWCg4oJtLAcsKp" type="github"><diagram id="kj7E_BtgJlIrFKdQWvsJ">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-09-15T14:17:02.598Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="arrpIyjIVjIsJxXoo3Wi" version="20.2.7" type="github">
+  <diagram id="kj7E_BtgJlIrFKdQWvsJ" name="第 1 页">
+    <mxGraphModel dx="946" dy="614" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nhmyxZo6cXcEhZsB0X3K-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="nhmyxZo6cXcEhZsB0X3K-1" target="nhmyxZo6cXcEhZsB0X3K-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nhmyxZo6cXcEhZsB0X3K-1" value="current&lt;br&gt;last" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nhmyxZo6cXcEhZsB0X3K-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="nhmyxZo6cXcEhZsB0X3K-4" target="nhmyxZo6cXcEhZsB0X3K-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nhmyxZo6cXcEhZsB0X3K-13" value="否" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nhmyxZo6cXcEhZsB0X3K-9">
+          <mxGeometry x="0.0128" y="4" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nhmyxZo6cXcEhZsB0X3K-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="nhmyxZo6cXcEhZsB0X3K-4" target="nhmyxZo6cXcEhZsB0X3K-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nhmyxZo6cXcEhZsB0X3K-12" value="是" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nhmyxZo6cXcEhZsB0X3K-11">
+          <mxGeometry x="-0.6333" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nhmyxZo6cXcEhZsB0X3K-4" value="current &amp;gt;= last" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="200" y="220" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nhmyxZo6cXcEhZsB0X3K-8" value="结束上一个节点（一直要结束到 current 对应的层）&lt;br&gt;回退 slice&lt;br&gt;在该层增加此节点" style="whiteSpace=wrap;html=1;rounded=0;align=left;" vertex="1" parent="1">
+          <mxGeometry x="330" y="315" width="280" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="nhmyxZo6cXcEhZsB0X3K-10" value="&lt;span style=&quot;&quot;&gt;向 map中该层增加该节点；&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;如果是大于，需要向 slice 中追加 indent&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;align=left;" vertex="1" parent="1">
+          <mxGeometry x="30" y="315" width="230" height="55" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
